@@ -3,7 +3,7 @@ create Database escuela;
 use escuela;
 
 create table padres(
-    id_padre int PRIMARY KEY AUTO_INCREMENT,
+    id_padre int PRIMARY KEY not null AUTO_INCREMENT,
     nombre_padre varchar(30) not null,
     ape_pat_padre varchar(30) not null,
     ape_mat_padre varchar(30) not null,
@@ -31,5 +31,18 @@ insert into profesores(nombre_prof, ape_pat_prof, ape_mat_prof, telefono_prof, e
 ('Fernando', 'Espinoza', 'Ortiz', '7759873462', 'fernando_espinoza@gmail.com');
 
 select * from profesores;
+
+create table contacto(
+    id_contact int PRIMARY KEY AUTO_INCREMENT,
+    nombre_contact varchar(30) not null,
+    ape_pat_contact varchar(30) not null,
+    email_contact varchar(40) not null,
+    telefono_contact varchar(10) not null,
+    mensaje_contact text(100) not null
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE USER 'gmg'@'localhost' IDENTIFIED BY 'gmg';
+GRANT ALL PRIVILEGES ON escuela.* TO 'gmg'@'localhost';
+FLUSH PRIVILEGES;
 
 drop database escuela;

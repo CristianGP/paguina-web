@@ -1,8 +1,8 @@
 <?php
-	$server = "127.0.0.1";
-	$user = "root";
-	$password = "1405";
-	$bd = "sistema_gmg";
+	$server = "localhost";
+	$user = "gmg@localhost";
+	$password = "gmg";
+	$bd = "escuela";
 
 	$conexion = mysqli_connect($server, $user, $password, $bd);
 	if (!$conexion){ 
